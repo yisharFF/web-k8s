@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Animal - Práctica K8s</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(180deg, #061c14 0%, #0d2818 50%, #040d09 100%);
+            color: #ecfdf5;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .logo-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #34d399, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: #a7f3d0;
+            font-size: 1.05rem;
+            opacity: 0.85;
+        }
+        .k8s-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 1rem;
+            background-color: rgba(6, 78, 59, 0.6);
+            border: 1px solid #059669;
+            color: #6ee7b7;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.825rem;
+            font-weight: 600;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 920px;
+            width: 100%;
+        }
+        .card {
+            background-color: #0d2818;
+            border: 1px solid #164e33;
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 12px 24px -10px rgba(16, 185, 129, 0.25);
+        }
+        .animal-visual {
+            height: 120px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .visual-lion   { background: linear-gradient(135deg, #d97706, #78350f); }
+        .visual-whale  { background: linear-gradient(135deg, #0284c7, #075985); }
+        .visual-eagle  { background: linear-gradient(135deg, #4f46e5, #312e81); }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.35rem;
+        }
+        .scientific {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #6ee7b7;
+            margin-bottom: 0.75rem;
+        }
+        .description {
+            font-size: 0.9rem;
+            color: #a7f3d0;
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+        .specs {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #164e33;
+            padding-top: 0.75rem;
+            font-size: 0.8rem;
+            color: #d1fae5;
+        }
+        .specs span strong {
+            color: #ffffff;
+        }
+        footer {
+            margin-top: 3.5rem;
+            color: #059669;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-icon">🌿</div>
+        <h1>MUNDO ANIMAL</h1>
+        <p>Explorando la asombrosa biodiversidad de nuestro planeta.</p>
+        <div class="k8s-badge">
+            <span>☸️</span>
+            <span>Pod Kubernetes en Línea</span>
+        </div>
+    </header>
+
+    <main class="grid">
+        <article class="card">
+            <div class="animal-visual visual-lion">🦁</div>
+            <div>
+                <div class="scientific">Panthera leo</div>
+                <h3>León Africano</h3>
+                <p class="description">Conocido como el rey de la sabana, vive en manadas sociales y es uno de los mayores depredadores terrestres.</p>
+            </div>
+            <div class="specs">
+                <span>Hábitat: <strong>Sabana</strong></span>
+                <span>Dieta: <strong>Carnívoro</strong></span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="animal-visual visual-whale">🐋</div>
+            <div>
+                <div class="scientific">Balaenoptera musculus</div>
+                <h3>Ballena Azul</h3>
+                <p class="description">El animal más grande que jamás ha existido en la Tierra, capaz de alcanzar hasta 30 metros de longitud.</p>
+            </div>
+            <div class="specs">
+                <span>Hábitat: <strong>Océanos</strong></span>
+                <span>Dieta: <strong>Krill</strong></span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="animal-visual visual-eagle">🦅</div>
+            <div>
+                <div class="scientific">Aquila chrysaetos</div>
+                <h3>Águila Real</h3>
+                <p class="description">Una de las aves de presa más formidables, con una visión prodigiosa y vuelos en picada a más de 240 km/h.</p>
+            </div>
+            <div class="specs">
+                <span>Hábitat: <strong>Montañas</strong></span>
+                <span>Vuelo: <strong>240+ km/h</strong></span>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Página estática Nginx lista para contenedor Docker y réplicas en Kubernetes</p>
+    </footer>
+</body>
+</html>
